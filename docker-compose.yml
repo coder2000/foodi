@@ -1,11 +1,20 @@
-version: '3.6'
+version: "3.6"
 
 services:
   db:
-    image: postgres:12.1
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_PASSWORD: dev2021pass
     volumes:
       - db_data:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  dbadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: default@dieterlunn.ca
+      PGADMIN_DEFAULT_PASSWORD: dev2021pass
+    ports:
+      - 5080:80
 
   redis:
     image: redis:5.0.7
