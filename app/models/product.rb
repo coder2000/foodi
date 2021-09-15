@@ -1,2 +1,39 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id                              :uuid             not null, primary key
+#  active                          :boolean
+#  barcode                         :string
+#  calories                        :integer
+#  can_be_frozen                   :boolean
+#  default_due_days                :integer          default(0)
+#  default_due_days_after_freezing :integer          default(0)
+#  default_due_days_after_open     :integer          default(0)
+#  default_due_days_after_thawing  :integer          default(0)
+#  description                     :text
+#  due_type                        :integer
+#  enable_tare_weight              :boolean
+#  min_stock_amount                :integer          default(0)
+#  name                            :string
+#  photo_data                      :jsonb
+#  tare_weight                     :decimal(10, 2)
+#  unit_ratio                      :integer
+#  created_at                      :datetime         not null
+#  updated_at                      :datetime         not null
+#  inventory_unit_id               :bigint
+#  location_id                     :bigint
+#  parent_id                       :bigint
+#  purchase_unit_id                :bigint
+#  store_id                        :bigint
+#
+# Indexes
+#
+#  index_products_on_inventory_unit_id  (inventory_unit_id)
+#  index_products_on_location_id        (location_id)
+#  index_products_on_parent_id          (parent_id)
+#  index_products_on_purchase_unit_id   (purchase_unit_id)
+#  index_products_on_store_id           (store_id)
+#
 class Product < ApplicationRecord
 end
