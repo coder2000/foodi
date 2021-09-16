@@ -9,4 +9,5 @@
 #  updated_at  :datetime         not null
 #
 class Location < ApplicationRecord
+  has_many :products
 end

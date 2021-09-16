@@ -36,4 +36,6 @@
 #  index_products_on_store_id           (store_id)
 #
 class Product < ApplicationRecord
+  belongs_to :location
+  belongs_to :store
 end
