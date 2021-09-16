@@ -13,6 +13,11 @@ html
 
     script src="https://kit.fontawesome.com/a59175b329.js" crossorigin="anonymous"
 
-  body.h-screen.flex.overflow-hidden.bg-gray-100
+  body.h-screen.flex.overflow-hidden.bg-gray-100 data-controller="sidebar--component"
     = render Sidebar::Component.new(links: [])
+    .flex-1.max-w-4xl.mx-auto.w-0.flex.flex-col.md:px-8.xl:px-0
+      .relative.z-10.flex-shrink-0.h-16.bg-white.border-b.border-gray-200.flex
+        button.border-r.border-gray-200.px-4.text-gray-500.focus:outline-none.focus:ring-2.focus:ring-inset.focus:ring-indigo-500.md:hidden type="button" data-action="sidebar--component#show"
+          span.sr-only Open sidebar
+          = fa_icon "bars", weight: "far", class: "text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6 fa-2xl"
     = yield
