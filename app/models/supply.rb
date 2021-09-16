@@ -20,4 +20,7 @@
 #  index_supplies_on_store_id     (store_id)
 #
 class Supply < ApplicationRecord
+  belongs_to :location
+  belongs_to :product
+  belongs_to :store
 end
