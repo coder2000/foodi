@@ -6,5 +6,6 @@
 # turbo_refresh_historical_location GET  /refresh_historical_location(.:format) turbo/native/navigation#refresh
 
 Rails.application.routes.draw do
+  root to: "supplies#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
