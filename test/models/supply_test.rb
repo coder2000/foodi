@@ -9,9 +9,9 @@
 #  purchased_at :datetime
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  location_id  :bigint
-#  product_id   :bigint
-#  store_id     :bigint
+#  location_id  :uuid
+#  product_id   :uuid
+#  store_id     :uuid
 #
 # Indexes
 #

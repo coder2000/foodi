@@ -40,11 +40,11 @@ ActiveRecord::Schema.define(version: 2021_09_15_200300) do
     t.boolean "enable_tare_weight"
     t.boolean "active"
     t.integer "unit_ratio"
-    t.bigint "location_id"
-    t.bigint "parent_id"
-    t.bigint "store_id"
-    t.bigint "purchase_unit_id"
-    t.bigint "inventory_unit_id"
+    t.uuid "location_id"
+    t.uuid "parent_id"
+    t.uuid "store_id"
+    t.uuid "purchase_unit_id"
+    t.uuid "inventory_unit_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["inventory_unit_id"], name: "index_products_on_inventory_unit_id"
@@ -66,9 +66,9 @@ ActiveRecord::Schema.define(version: 2021_09_15_200300) do
     t.datetime "purchased_at", precision: 6
     t.datetime "due_at", precision: 6
     t.datetime "opened_at", precision: 6
-    t.bigint "product_id"
-    t.bigint "location_id"
-    t.bigint "store_id"
+    t.uuid "product_id"
+    t.uuid "location_id"
+    t.uuid "store_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["location_id"], name: "index_supplies_on_location_id"

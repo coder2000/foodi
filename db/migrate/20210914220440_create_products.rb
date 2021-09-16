@@ -18,11 +18,11 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.boolean :active
       t.integer :unit_ratio
 
-      t.references :location
-      t.references :parent
-      t.references :store
-      t.references :purchase_unit
-      t.references :inventory_unit
+      t.references :location, type: :uuid
+      t.references :parent, type: :uuid
+      t.references :store, type: :uuid
+      t.references :purchase_unit, type: :uuid
+      t.references :inventory_unit, type: :uuid
 
       t.timestamps
     end

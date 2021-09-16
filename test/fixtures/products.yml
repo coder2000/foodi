@@ -21,11 +21,11 @@
 #  unit_ratio                      :integer
 #  created_at                      :datetime         not null
 #  updated_at                      :datetime         not null
-#  inventory_unit_id               :bigint
-#  location_id                     :bigint
-#  parent_id                       :bigint
-#  purchase_unit_id                :bigint
-#  store_id                        :bigint
+#  inventory_unit_id               :uuid
+#  location_id                     :uuid
+#  parent_id                       :uuid
+#  purchase_unit_id                :uuid
+#  store_id                        :uuid
 #
 # Indexes
 #

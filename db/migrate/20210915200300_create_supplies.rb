@@ -6,9 +6,9 @@ class CreateSupplies < ActiveRecord::Migration[7.0]
       t.datetime :due_at
       t.datetime :opened_at
 
-      t.references :product
-      t.references :location
-      t.references :store
+      t.references :product, type: :uuid
+      t.references :location, type: :uuid
+      t.references :store, type: :uuid
 
       t.timestamps
     end
