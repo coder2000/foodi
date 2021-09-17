@@ -15,7 +15,7 @@ html
     link rel="stylesheet" href="https://rsms.me/inter/inter.css"
 
   body.h-screen.flex.overflow-hidden.bg-gray-100 x-data="{ sidebarOpen: false }" @keydown.window.escape="sidebarOpen = false"
-    = render Sidebar::Component.new(links: [])
+    = render Sidebar::Component.new(links: @links)
     .flex-1.w-0.flex.flex-col.overflow-hidden
       = render Search::Component.new
       main.flex-1.relative.overflow-y-auto.focus:outline-none

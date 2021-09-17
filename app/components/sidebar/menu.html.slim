@@ -1,0 +1,7 @@
+.flex.flex-1.flex-col.pt-5.pb-4.overflow-y-auto
+  .flex.items-center.flex-shrink-0.px-4
+    = image_tag "foodi-dark-text.svg", alt: "Foodi logo showing a cow", class: "h-8 w-auto"
+  nav.mt-5.px-2.space-y-1
+    = render Sidebar::Link.with_collection(@links, classes: @classes, active: @active, inactive: @inactive)
+div.px-2.pb-4
+  = render Sidebar::Link.new(link: @settings, classes: @classes, active: @active, inactive: @inactive)

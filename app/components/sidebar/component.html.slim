@@ -34,29 +34,7 @@
       button.ml-1.flex.items-center.justify-center.h-10.w-10.rounded-full.focus:outline-none.focus:ring-2.focus:ring-inset.focus:ring-white type="button" @click="sidebarOpen = false"
         span.sr-only Close sidebar
         = fa_icon "times", class: "text-white fa-xl"
-    .flex-1.h-0.pt-5.pb-4.overflow-y-auto
-      .flex-shrink-0.flex.items-center.px-4
-        = image_tag "foodi-dark.svg", alt: "Foodi logo showing a cow", class: "h-8 w-auto"
-      nav.mt-5.px-2.space-y-1
-          = link_to supplies_path, class: "bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
-            = fa_icon "parachute-box", class: "text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
-            | Supplies
-          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
-            = fa_icon "shopping-cart", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
-            | Shopping List
-          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
-            = fa_icon "book-blank", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
-            | Recipes
-          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
-            = fa_icon "calendar-week", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
-            | Meal Planner
-          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
-            = fa_icon "calendar", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
-            | Calendar
-    div.px-2.pb-4
-      = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
-        = fa_icon "gear", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl"
-        | Settings
+    = render Sidebar::Menu.new(links: @links)
     .flex-shrink-0.flex.bg-gray-700.p-4
       = link_to "#", class: "flex-shrink-0 w-full group block" do
         .flex.items-center
@@ -70,29 +48,7 @@
 .hidden.md:flex.md:flex-shrink-0
   .flex.flex-col.w-64
     .flex-1.flex.flex-col.min-h-0.bg-gray-800
-      .flex.flex-1.flex-col.pt-5.pb-4.overflow-y-auto
-        .flex.items-center.flex-shrink-0.px-4
-          = image_tag "foodi-dark-text.svg", alt: "Foodi logo showing a cow", class: "h-8 w-auto"
-        nav.mt-5.px-2.space-y-1
-          = link_to supplies_path, class: "bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
-            = fa_icon "parachute-box", class: "text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
-            | Supplies
-          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
-            = fa_icon "shopping-cart", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
-            | Shopping List
-          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
-            = fa_icon "book-blank", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
-            | Recipes
-          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
-            = fa_icon "calendar-week", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
-            | Meal Planner
-          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
-            = fa_icon "calendar", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
-            | Calendar
-      div.px-2.pb-4
-        = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
-          = fa_icon "gear", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl"
-          | Settings
+      = render Sidebar::Menu.new(links: @links)
     .flex-shrink-0.flex.bg-gray-700.p-4
       = link_to "#", class: "flex-shrink-0 w-full group block" do
         .flex.items-center
