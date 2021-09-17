@@ -3,8 +3,6 @@
 
 import { application } from "./application";
 
-import HelloController from "./hello_controller";
 import SidebarController from "../../components/sidebar/component_controller";
 
-application.register("hello", HelloController);
-application.register("sidebar--component", SidebarController);
+application.register("sidebar", SidebarController);

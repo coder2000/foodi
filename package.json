@@ -10,6 +10,7 @@
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
+    "alpinejs": "^3.3.4",
     "autoprefixer": "^10.3.4",
     "el-transition": "^0.0.7",
     "esbuild": "^0.12.27",
