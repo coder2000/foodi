@@ -1,7 +1,7 @@
 .relative.z-10.flex-shrink-0.h-16.bg-white.shadow.flex
   button.border-r.border-gray-200.px-4.text-gray-500.focus:outline-none.focus:ring-2.focus:ring-inset.focus:ring-indigo-500.md:hidden type="button" @click="sidebarOpen = true"
     span.sr-only Open sidebar
-    = fa_icon "bars", weight: "fa-regular", class: "text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6 fa-2xl"
+    = fa_icon "bars", weight: "fa-solid", class: "text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6 fa-2xl"
   .flex-1.flex.justify-between.px-4
     .flex-1.flex
       form.w-full.flex.md:ml-0 action="#" method="get"
@@ -12,11 +12,13 @@
           input.block.h-full.w-full.border-transparent.py-2.pl-8.pr-3.text-gray-900.placeholder-gray-500.focus:outline-none.focus:placeholder-gray-400.focus:ring-0.focus:border-transparent.sm:text-sm placeholder="Search"
     .ml-4.flex.items-center.md:ml-6
       span.relative.z-0.inline-flex.shadow-sm.rounded-md
-        = link_to "New Purchase", new_supply_path, class: "relative inline-flex items-center px-4 py-2 rounded-l-md bg-foodi-600 text-sm font-medium text-white hover:bg-foodi-700 focus:z-10 focus:outline-none focus:ring-1 focus:ring-foodi-500 focus:border-foodi-500"
+        = link_to new_supply_path, class: "relative inline-flex items-center px-4 py-2 rounded-l-md bg-foodi-600 text-sm font-medium text-white hover:bg-foodi-700 focus:z-10 focus:outline-none focus:ring-1 focus:ring-foodi-500 focus:border-foodi-500" do
+          = fa_icon "plus", weight: "fa-solid", class: "inline md:hidden"
+          span.hidden.md:inline New Product
         span.-ml-px.relative.block x-data="{ open: false }"
           button.relative.inline-flex.items-center.px-2.py-2.rounded-r-md.border-l.border-gray-50.bg-foodi-600.text-sm.font-medium.text-white.hover:bg-foodi-700.focus:z-10.focus:outline-none.focus:ring-1.focus:ring-foodi-500.focus:border-foodi-500 type="button" id="option-menu-button" aria-expanded="true" aria-haspopup="true" @click="open = !open" @click.outside="open = false"
             span.sr-only Open options
-            = fa_icon "angle-down", class: "w-5 h-5"
+            = fa_icon "angle-down", weight: "fa-solid", class: "w-5 h-5"
           .origin-top-right.absolute.right-0.mt-2.-mr-1.w-56.rounded-md.shadow-lg.bg-white.ring-1.ring-black.ring-opacity-5.focus:outline-none {
             role="menu"
             aria-orientation="vertical"
