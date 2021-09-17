@@ -12,6 +12,7 @@ html
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
 
     script src="https://kit.fontawesome.com/a59175b329.js" crossorigin="anonymous"
+    link rel="stylesheet" href="https://rsms.me/inter/inter.css"
 
   body.h-screen.flex.overflow-hidden.bg-gray-100 x-data="{ sidebarOpen: false }" @keydown.window.escape="sidebarOpen = false"
     = render Sidebar::Component.new(links: [])
@@ -28,6 +29,13 @@ html
                 .pointer-events-none.absolute.inset-y-0.left-0.flex.items-center
                   = fa_icon "magnifying-glass", class: "fa-lg h-5 w-5"
                 input.block.h-full.w-full.border-transparent.py-2.pl-8.pr-3.text-gray-900.placeholder-gray-500.focus:outline-none.focus:placeholder-gray-400.focus:ring-0.focus:border-transparent.sm:text-sm placeholder="Search"
+          .ml-4.flex.items-center.md:ml-6
+            span.relative.z-0.inline-flex.shadow-sm.rounded-md
+              button.relative.inline-flex.items-center.px-4.py-2.rounded-l-md.border.border-gray-300.bg-white.text-sm.font-medium.text-gray-700.hover:bg-gray-50.focus:z-10.focus:outline-none.focus:ring-1.focus:ring-indigo-500.focus:border-indigo-500 type="button" New Purchase
+              span.-ml-px.relative.block
+                button.relative.inline-flex.items-center.px-2.py-2.rounded-r-md.border.border-gray-300.bg-white.text-sm.font-medium.text-gray-500.hover:bg-gray-50.focus:z-10.focus:outline-none.focus:ring-1.focus:ring-indigo-500.focus:border-indigo-500 type="button"
+                  span.sr-only Open options
+                  = fa_icon "angle-down", class: "w-5 h-5"
       main.flex-1.relative.overflow-y-auto.focus:outline-none
         .py-6
           .max-w-7xl.mx-auto
