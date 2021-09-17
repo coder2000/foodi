@@ -1,0 +1,103 @@
+.fixed.inset-0.flex.z-40.md:hidden role="dialog" aria-modal="true" x-show="sidebarOpen" style="display: none;" x-ref="dialog"
+  .fixed.inset-0.bg-gray-600.bg-opacity-75 {
+    aria-hidden="true"
+    style="display: none;"
+    @click="sidebarOpen = false"
+    x-show="sidebarOpen"
+    x-transition:enter="transition-opacity ease-linear duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition-opacity ease-linear duration-300"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+  }
+  .relative.flex-1.flex.flex-col.max-w-xs.w-full.bg-gray-800 {
+    style="display: none;"
+    x-show="sidebarOpen"
+    x-transition:enter="transition ease-in-out duration-300 transform"
+    x-transition:enter-start="-translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transition ease-in-out duration-300 transform"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="-translate-x-full"
+  }
+    .absolute.top-0.right-0.-mr-12.pt-2 {
+      style="display: none;"
+      x-show="sidebarOpen"
+      x-transition:enter="ease-in-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="ease-in-out duration-300"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+    }
+      button.ml-1.flex.items-center.justify-center.h-10.w-10.rounded-full.focus:outline-none.focus:ring-2.focus:ring-inset.focus:ring-white type="button" @click="sidebarOpen = false"
+        span.sr-only Close sidebar
+        = fa_icon "times", class: "text-white fa-xl"
+    .flex-1.h-0.pt-5.pb-4.overflow-y-auto
+      .flex-shrink-0.flex.items-center.px-4
+        = image_tag "foodi-dark.svg", class: "h-8 w-auto"
+      nav.mt-5.px-2.space-y-1
+          = link_to supplies_path, class: "bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
+            = fa_icon "parachute-box", class: "text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
+            | Supplies
+          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
+            = fa_icon "shopping-cart", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
+            | Shopping List
+          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
+            = fa_icon "book-blank", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
+            | Recipes
+          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
+            = fa_icon "calendar-week", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
+            | Meal Planner
+          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
+            = fa_icon "calendar", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
+            | Calendar
+    div.px-2.pb-4
+      = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
+        = fa_icon "gear", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl"
+        | Settings
+    .flex-shrink-0.flex.bg-gray-700.p-4
+      = link_to "#", class: "flex-shrink-0 w-full group block" do
+        .flex.items-center
+          div
+            = image_tag "avatar-missing.svg", class: "inline-block h-9 w-9 rounded-full"
+          .ml-3
+            p.text-sm.font-medium.text-white User
+            p.text-xs.font-medium.text-gray-300.group-hover:text-gray-200 View Profile
+  .flex-shrink-0.w-14
+
+.hidden.md:flex.md:flex-shrink-0
+  .flex.flex-col.w-64
+    .flex-1.flex.flex-col.min-h-0.bg-gray-800
+      .flex.flex-1.flex-col.pt-5.pb-4.overflow-y-auto
+        .flex.items-center.flex-shrink-0.px-4
+          = image_tag "foodi-dark-text.svg", class: "h-8 w-auto"
+        nav.mt-5.px-2.space-y-1
+          = link_to supplies_path, class: "bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
+            = fa_icon "parachute-box", class: "text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
+            | Supplies
+          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
+            = fa_icon "shopping-cart", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
+            | Shopping List
+          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
+            = fa_icon "book-blank", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
+            | Recipes
+          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
+            = fa_icon "calendar-week", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
+            | Meal Planner
+          = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
+            = fa_icon "calendar", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl h-6 w-6"
+            | Calendar
+      div.px-2.pb-4
+        = link_to "#", class: "text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do
+          = fa_icon "gear", class: "text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 fa-xl"
+          | Settings
+    .flex-shrink-0.flex.bg-gray-700.p-4
+      = link_to "#", class: "flex-shrink-0 w-full group block" do
+        .flex.items-center
+          div
+            = image_tag "avatar-missing.svg", class: "inline-block h-9 w-9 rounded-full"
+          .ml-3
+            p.text-sm.font-medium.text-white User
+            p.text-xs.font-medium.text-gray-300.group-hover:text-gray-200 View Profile
