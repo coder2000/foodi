@@ -2,7 +2,3 @@
 // Run that command whenever you add a new controller
 
 import { application } from "./application";
-
-import SidebarController from "../../components/sidebar/component_controller";
-
-application.register("sidebar", SidebarController);
