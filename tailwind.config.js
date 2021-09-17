@@ -8,6 +8,19 @@ module.exports = {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        foodi: {
+          100: "#d3e4da",
+          200: "#a6c9b4",
+          300: "#7aae8f",
+          400: "#4d9369",
+          500: "#217844",
+          600: "#1a6036",
+          700: "#144829",
+          800: "#0d301b",
+          900: "#07180e",
+        },
+      },
     },
   },
   variants: {
