@@ -14,7 +14,7 @@
       span.relative.z-0.inline-flex.shadow-sm.rounded-md
         = link_to new_supply_path, class: "relative inline-flex items-center px-4 py-2 rounded-l-md bg-foodi-600 text-sm font-medium text-white hover:bg-foodi-700 focus:z-10 focus:outline-none focus:ring-1 focus:ring-foodi-500 focus:border-foodi-500" do
           = fa_icon "plus", weight: "fa-solid", class: "inline md:hidden"
-          span.hidden.md:inline New Product
+          span.hidden.md:inline New Purchase
         span.-ml-px.relative.block x-data="{ open: false }"
           button.relative.inline-flex.items-center.px-2.py-2.rounded-r-md.border-l.border-gray-50.bg-foodi-600.text-sm.font-medium.text-white.hover:bg-foodi-700.focus:z-10.focus:outline-none.focus:ring-1.focus:ring-foodi-500.focus:border-foodi-500 type="button" id="option-menu-button" aria-expanded="true" aria-haspopup="true" @click="open = !open" @click.outside="open = false"
             span.sr-only Open options
