@@ -23,6 +23,7 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.references :store, type: :uuid
       t.references :purchase_unit, type: :uuid
       t.references :inventory_unit, type: :uuid
+      t.references :household, type: :uuid
 
       t.timestamps
     end

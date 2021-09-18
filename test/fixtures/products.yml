@@ -21,6 +21,7 @@
 #  unit_ratio                      :integer
 #  created_at                      :datetime         not null
 #  updated_at                      :datetime         not null
+#  household_id                    :uuid
 #  inventory_unit_id               :uuid
 #  location_id                     :uuid
 #  parent_id                       :uuid
@@ -29,6 +30,7 @@
 #
 # Indexes
 #
+#  index_products_on_household_id       (household_id)
 #  index_products_on_inventory_unit_id  (inventory_unit_id)
 #  index_products_on_location_id        (location_id)
 #  index_products_on_parent_id          (parent_id)

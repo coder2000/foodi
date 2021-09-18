@@ -19,7 +19,7 @@
 #  unlock_token           :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  household_id           :bigint
+#  household_id           :uuid
 #
 # Indexes
 #

@@ -9,6 +9,7 @@ class CreateSupplies < ActiveRecord::Migration[7.0]
       t.references :product, type: :uuid
       t.references :location, type: :uuid
       t.references :store, type: :uuid
+      t.references :household, type: :uuid
 
       t.timestamps
     end

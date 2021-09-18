@@ -70,8 +70,10 @@ ActiveRecord::Schema.define(version: 2021_09_18_005137) do
   create_table "locations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.uuid "household_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["household_id"], name: "index_locations_on_household_id"
   end
 
   create_table "products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -96,8 +98,10 @@ ActiveRecord::Schema.define(version: 2021_09_18_005137) do
     t.uuid "store_id"
     t.uuid "purchase_unit_id"
     t.uuid "inventory_unit_id"
+    t.uuid "household_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["household_id"], name: "index_products_on_household_id"
     t.index ["inventory_unit_id"], name: "index_products_on_inventory_unit_id"
     t.index ["location_id"], name: "index_products_on_location_id"
     t.index ["parent_id"], name: "index_products_on_parent_id"
@@ -114,16 +118,20 @@ ActiveRecord::Schema.define(version: 2021_09_18_005137) do
   create_table "receipts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "purchased_at", precision: 6
     t.uuid "store_id"
+    t.uuid "household_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["household_id"], name: "index_receipts_on_household_id"
     t.index ["store_id"], name: "index_receipts_on_store_id"
   end
 
   create_table "stores", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.uuid "household_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["household_id"], name: "index_stores_on_household_id"
   end
 
   create_table "supplies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -134,8 +142,10 @@ ActiveRecord::Schema.define(version: 2021_09_18_005137) do
     t.uuid "product_id"
     t.uuid "location_id"
     t.uuid "store_id"
+    t.uuid "household_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["household_id"], name: "index_supplies_on_household_id"
     t.index ["location_id"], name: "index_supplies_on_location_id"
     t.index ["product_id"], name: "index_supplies_on_product_id"
     t.index ["store_id"], name: "index_supplies_on_store_id"
@@ -145,8 +155,10 @@ ActiveRecord::Schema.define(version: 2021_09_18_005137) do
     t.string "name"
     t.text "description"
     t.string "plural"
+    t.uuid "household_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["household_id"], name: "index_units_on_household_id"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -164,7 +176,7 @@ ActiveRecord::Schema.define(version: 2021_09_18_005137) do
     t.datetime "locked_at", precision: 6
     t.string "first_name"
     t.string "last_name"
-    t.bigint "household_id"
+    t.uuid "household_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

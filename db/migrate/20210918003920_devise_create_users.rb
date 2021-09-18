@@ -35,7 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :first_name
       t.string :last_name
 
-      t.references :household
+      t.references :household, type: :uuid
 
       t.timestamps null: false
     end

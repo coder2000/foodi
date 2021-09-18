@@ -5,6 +5,8 @@ class CreateUnits < ActiveRecord::Migration[7.0]
       t.text :description
       t.string :plural
 
+      t.references :household, type: :uuid
+
       t.timestamps
     end
   end
