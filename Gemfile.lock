@@ -134,6 +134,9 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    acts_as_tenant (0.5.1)
+      rails (>= 5.2)
+      request_store (>= 1.0.5)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     ahoy_matey (4.0.1)
@@ -227,6 +230,8 @@ GEM
     rake (13.0.6)
     redis (4.4.0)
     regexp_parser (2.1.1)
+    request_store (1.5.0)
+      rack (>= 1.4)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -317,6 +322,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  acts_as_tenant
   ahoy_matey
   annotate!
   better_errors

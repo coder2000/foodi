@@ -18,6 +18,7 @@ gem "redis", "~> 4.0"
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem "acts_as_tenant"
 gem "ahoy_matey"
 gem "cssbundling-rails", github: "rails/cssbundling-rails"
 gem "devise", github: "strobilomyces/devise", branch: "patch-1"
