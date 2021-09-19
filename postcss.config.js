@@ -3,7 +3,7 @@ module.exports = {
     require("postcss-preset-env")({
       stage: 2,
       features: {
-        "nesting-rules": true,
+        "nesting-rules": false,
       },
     }),
     require("postcss-import"),
