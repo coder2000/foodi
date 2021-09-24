@@ -8,6 +8,8 @@
 #  user_google_oauth2_omniauth_callback GET|POST /users/auth/google_oauth2/callback(.:format) devise/omniauth_callbacks#google_oauth2
 #      user_facebook_omniauth_authorize GET|POST /users/auth/facebook(.:format)               devise/omniauth_callbacks#passthru
 #       user_facebook_omniauth_callback GET|POST /users/auth/facebook/callback(.:format)      devise/omniauth_callbacks#facebook
+#       user_twitter_omniauth_authorize GET|POST /users/auth/twitter(.:format)                devise/omniauth_callbacks#passthru
+#        user_twitter_omniauth_callback GET|POST /users/auth/twitter/callback(.:format)       devise/omniauth_callbacks#twitter
 #                     new_user_password GET      /users/password/new(.:format)                devise/passwords#new
 #                    edit_user_password GET      /users/password/edit(.:format)               devise/passwords#edit
 #                         user_password PATCH    /users/password(.:format)                    devise/passwords#update
