@@ -10,15 +10,15 @@
             p.text-sm.font-medium.text-gray-700 Sign in with
             .mt-1.grid.grid-cols-3.gap-3
               div
-                = link_to omniauth_authorize_path(resource_name, :facebook), class: "w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50" do
+                = link_to omniauth_authorize_path(resource_name, :facebook), method: :post, class: "w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50" do
                   span.sr-only Sign in with Facebook
                   = fa_icon "facebook-f", weight: "fa-brands", class: "fa-fw fa-lg w-5 h-5"
               div
-                = link_to omniauth_authorize_path(resource_name, :google_oauth2), class: "w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50" do
+                = link_to omniauth_authorize_path(resource_name, :google_oauth2), method: :post, class: "w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50" do
                   span.sr-only Sign in with Google
                   = fa_icon "google", weight: "fa-brands", class: "fa-fw fa-lg w-5 h-5"
               div
-                = link_to omniauth_authorize_path(resource_name, :twitter), class: "w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50" do
+                = link_to omniauth_authorize_path(resource_name, :twitter), data: {turbo_method: :post}, class: "w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50" do
                   span.sr-only Sign in with Twitter
                   = fa_icon "twitter", weight: "fa-brands", class: "fa-fw fa-lg w-5 h-5"
           .mt-6.relative
