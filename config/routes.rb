@@ -4,12 +4,12 @@
 #                      new_user_session GET      /users/sign_in(.:format)                     users/sessions#new
 #                          user_session POST     /users/sign_in(.:format)                     users/sessions#create
 #                  destroy_user_session DELETE   /users/sign_out(.:format)                    users/sessions#destroy
-# user_google_oauth2_omniauth_authorize GET|POST /users/auth/google_oauth2(.:format)          devise/omniauth_callbacks#passthru
-#  user_google_oauth2_omniauth_callback GET|POST /users/auth/google_oauth2/callback(.:format) devise/omniauth_callbacks#google_oauth2
-#      user_facebook_omniauth_authorize GET|POST /users/auth/facebook(.:format)               devise/omniauth_callbacks#passthru
-#       user_facebook_omniauth_callback GET|POST /users/auth/facebook/callback(.:format)      devise/omniauth_callbacks#facebook
-#       user_twitter_omniauth_authorize GET|POST /users/auth/twitter(.:format)                devise/omniauth_callbacks#passthru
-#        user_twitter_omniauth_callback GET|POST /users/auth/twitter/callback(.:format)       devise/omniauth_callbacks#twitter
+# user_google_oauth2_omniauth_authorize GET|POST /users/auth/google_oauth2(.:format)          users/omniauth_callbacks#passthru
+#  user_google_oauth2_omniauth_callback GET|POST /users/auth/google_oauth2/callback(.:format) users/omniauth_callbacks#google_oauth2
+#      user_facebook_omniauth_authorize GET|POST /users/auth/facebook(.:format)               users/omniauth_callbacks#passthru
+#       user_facebook_omniauth_callback GET|POST /users/auth/facebook/callback(.:format)      users/omniauth_callbacks#facebook
+#       user_twitter_omniauth_authorize GET|POST /users/auth/twitter(.:format)                users/omniauth_callbacks#passthru
+#        user_twitter_omniauth_callback GET|POST /users/auth/twitter/callback(.:format)       users/omniauth_callbacks#twitter
 #                     new_user_password GET      /users/password/new(.:format)                devise/passwords#new
 #                    edit_user_password GET      /users/password/edit(.:format)               devise/passwords#edit
 #                         user_password PATCH    /users/password(.:format)                    devise/passwords#update
@@ -37,7 +37,8 @@
 
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    sessions: "users/sessions"
+    sessions: "users/sessions",
+    omniauth_callbacks: "users/omniauth_callbacks"
   }
   resources :supplies
 
