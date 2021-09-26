@@ -13,4 +13,12 @@ class Sidebar::Menu < ViewComponent::Base
       icon: "gear"
     }
   end
+
+  def before_render
+    @logout = {
+      name: "Log out",
+      url: destroy_user_session_path,
+      icon: "sign-out-alt"
+    }
+  end
 end
