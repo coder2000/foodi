@@ -28,6 +28,7 @@
 #                       new_user_unlock GET      /users/unlock/new(.:format)                  devise/unlocks#new
 #                           user_unlock GET      /users/unlock(.:format)                      devise/unlocks#show
 #                                       POST     /users/unlock(.:format)                      devise/unlocks#create
+#                                  user GET      /users/:id(.:format)                         users#show
 #                              supplies GET      /supplies(.:format)                          supplies#index
 #                                       POST     /supplies(.:format)                          supplies#create
 #                            new_supply GET      /supplies/new(.:format)                      supplies#new
@@ -46,6 +47,8 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+
+  resources :users, only: [:show]
   resources :supplies
 
   root to: "static#index"
