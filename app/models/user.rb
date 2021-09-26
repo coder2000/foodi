@@ -16,6 +16,7 @@
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
 #  role                   :integer          default("member")
+#  slug                   :string
 #  unconfirmed_email      :string
 #  unlock_token           :string
 #  created_at             :datetime         not null
@@ -28,9 +29,12 @@
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_household_id          (household_id)
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_slug                  (slug) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
 class User < ApplicationRecord
+  extend FriendlyId
+
   enum role: {member: 0, admin: 1, super_admin: 2}
 
   has_many :identities, dependent: :destroy
@@ -41,4 +45,5 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :facebook, :twitter]
 
   has_person_name
+  friendly_id :email, use: :slugged
 end
