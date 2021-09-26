@@ -5,4 +5,4 @@
     = render Sidebar::Link.with_collection(@links, classes: @classes, active: @active, inactive: @inactive)
 div.px-2.pb-4
   = render Sidebar::Link.new(link: @settings, classes: @classes, active: @active, inactive: @inactive)
-  = render Sidebar::Link.new(link: @logout, classes: @classes, active: @active, inactive: @inactive)
+  = render Sidebar::Link.new(link: @logout, classes: @classes, active: @active, inactive: @inactive, delete: true)

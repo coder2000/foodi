@@ -57,7 +57,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def handle_existing_identity(identity)
-    identify.update(identity_params)
+    identity.update(identity_params)
 
     if user_signed_in?
       redirect_to root_path, notice: "Successfully linked #{auth.provider.capitalize} account."

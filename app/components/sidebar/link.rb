@@ -1,7 +1,7 @@
 class Sidebar::Link < ViewComponent::Base
   delegate :fa_icon, to: :helpers
 
-  def initialize(link:, classes:, active:, inactive:)
+  def initialize(link:, classes:, active:, inactive:, delete: false)
     @name = link[:name]
     @url = link[:url]
     @classes = Array.wrap(classes[:link])
@@ -13,9 +13,13 @@ class Sidebar::Link < ViewComponent::Base
     @icon_inactive = Array.wrap(inactive[:icon])
 
     @icon = link[:icon]
+
+    @delete = delete
   end
 
   def call
+    html_options = {}
+
     if request.path == @url
       @classes.push(*@active)
       @icon_classes.push(*@icon_active)
@@ -24,7 +28,13 @@ class Sidebar::Link < ViewComponent::Base
       @icon_classes.push(*@icon_inactive)
     end
 
-    link_to @url, class: @classes do
+    html_options[:class] = @classes
+
+    if @delete
+      html_options[:data] = {turbo_method: :delete}
+    end
+
+    link_to @url, html_options do
       fa_icon(@icon, class: @icon_classes) + @name
     end
   end
