@@ -4,6 +4,7 @@
 #
 #  id             :uuid             not null, primary key
 #  city           :string
+#  name           :string
 #  state          :string
 #  street_address :string
 #  subdomain      :string

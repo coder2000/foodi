@@ -37,6 +37,15 @@
 #                                       PATCH    /supplies/:id(.:format)                      supplies#update
 #                                       PUT      /supplies/:id(.:format)                      supplies#update
 #                                       DELETE   /supplies/:id(.:format)                      supplies#destroy
+#                            households GET      /households(.:format)                        households#index
+#                                       POST     /households(.:format)                        households#create
+#                         new_household GET      /households/new(.:format)                    households#new
+#                        edit_household GET      /households/:id/edit(.:format)               households#edit
+#                             household GET      /households/:id(.:format)                    households#show
+#                                       PATCH    /households/:id(.:format)                    households#update
+#                                       PUT      /households/:id(.:format)                    households#update
+#                                       DELETE   /households/:id(.:format)                    households#destroy
+#                    authenticated_root GET      /                                            dashboard#index
 #                                  root GET      /                                            static#index
 #      turbo_recede_historical_location GET      /recede_historical_location(.:format)        turbo/native/navigation#recede
 #      turbo_resume_historical_location GET      /resume_historical_location(.:format)        turbo/native/navigation#resume
@@ -50,6 +59,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :supplies
+  resources :households
 
   authenticated :user do
     root to: "dashboard#index", as: :authenticated_root
