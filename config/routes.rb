@@ -51,6 +51,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :supplies
 
+  authenticated :user do
+    root to: "dashboard#index"
+  end
+
   root to: "static#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
