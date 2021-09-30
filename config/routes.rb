@@ -52,7 +52,7 @@ Rails.application.routes.draw do
   resources :supplies
 
   authenticated :user do
-    root to: "dashboard#index"
+    root to: "dashboard#index", as: :authenticated_root
   end
 
   root to: "static#index"
