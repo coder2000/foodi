@@ -1,20 +1,20 @@
 GIT
   remote: https://github.com/rails/cssbundling-rails.git
-  revision: d084a0cba232c950f5669fc64719744e584f1478
+  revision: c8c3f607eb2e6996c44063106f32ca85966f95d6
   specs:
-    cssbundling-rails (0.2.2)
+    cssbundling-rails (0.2.4)
       railties (>= 6.0.0)
 
 GIT
   remote: https://github.com/rails/jsbundling-rails.git
-  revision: 122f356d5d472f91b7efa388c52d97bada4b673d
+  revision: c3c4610c35b339dc703afbf29baa2485f5668941
   specs:
-    jsbundling-rails (0.1.7)
+    jsbundling-rails (0.1.9)
       railties (>= 6.0.0)
 
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 581aac754c6cbe9f3f4de396bc8ef3728e56f4f4
+  revision: 414e8dea599dc78ffc8bd92b023157be2ef20556
   branch: main
   specs:
     actioncable (7.0.0.alpha2)
@@ -96,7 +96,7 @@ GIT
       method_source
       rake (>= 0.13)
       thor (~> 1.0)
-      zeitwerk (~> 2.5.0.beta4)
+      zeitwerk (~> 2.5.0.beta5)
 
 GIT
   remote: https://github.com/rails/web-console.git
@@ -222,7 +222,7 @@ GEM
     name_of_person (1.1.1)
       activesupport (>= 5.2.0)
     nio4r (2.5.8)
-    nokogiri (1.12.4-x86_64-linux)
+    nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     oauth (0.5.6)
     oauth2 (1.4.7)
@@ -264,7 +264,7 @@ GEM
       google-protobuf (>= 3.17.1)
     pretender (0.3.4)
       actionpack (>= 4.2)
-    prosopite (1.0.1)
+    prosopite (1.0.3)
     public_suffix (4.0.6)
     puma (5.5.0)
       nio4r (~> 2.0)
@@ -300,7 +300,7 @@ GEM
       rubocop-ast (>= 1.9.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.11.0)
+    rubocop-ast (1.12.0)
       parser (>= 3.0.1.1)
     rubocop-performance (1.11.5)
       rubocop (>= 1.7.0, < 2.0)
@@ -355,7 +355,7 @@ GEM
     thor (1.1.0)
     tilt (2.0.10)
     timeliness (0.4.4)
-    turbo-rails (0.8.0)
+    turbo-rails (0.8.1)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -372,7 +372,7 @@ GEM
     websocket-extensions (0.1.5)
     whenever (1.0.0)
       chronic (>= 0.6.3)
-    zeitwerk (2.5.0.beta4)
+    zeitwerk (2.5.0.beta5)
 
 PLATFORMS
   x86_64-linux
