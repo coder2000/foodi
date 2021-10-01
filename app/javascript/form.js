@@ -27,9 +27,33 @@ export default () => ({
       this[element.id].errorMessage = this.getErrorMessage(element);
     });
   },
+  submit: function (event) {
+    const invalidElements = this.elements.filter((element) => {
+      return (
+        Iodine.is(element.value, JSON.parse(element.dataset.rules)) !== true
+      );
+    });
+
+    if (invalidElements.length > 0) {
+      event.preventDefault();
+
+      document.getElementById(invalidElements[0].id).scrollIntoView();
+
+      this.elements.map((element) => {
+        this[element.id].blurred = true;
+      });
+
+      this.updateErrorMessages();
+      return false;
+    }
+  },
   change: {
     ["@blur"](event) {
       this[event.target.id].blurred = true;
+      this.updateErrorMessages();
+    },
+    ["@input"](event) {
+      this[event.target.id].serverErrors = [];
       this.updateErrorMessages();
     },
   },
