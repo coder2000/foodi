@@ -1,6 +1,7 @@
 // Entry point for the build script in your package.json
 import "@hotwired/turbo-rails";
 import Alpine from "alpinejs";
+import "@kingshott/iodine";
 
 window.Alpine = Alpine;
 
