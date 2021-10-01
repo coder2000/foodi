@@ -3,7 +3,7 @@
     .fixed.inset-0.bg-gray-500/75.transition-opacity
     span.hidden.sm:inline-block.sm:align-middle.sm:h-screen aria-hidden="true" &#8203;
     .inline-block.align-bottom.bg-white.rounded-lg.text-left.overflow-hidden.shadow-xl.transform.transition-all.sm:my-8.sm:align-middle.max-w-lg.sm:w-full
-      = form_with model: @household do |f|
+      = form_with model: @household, html: {"x-data": "form", data: {turbo: false}} do |f|
         .bg-white.px-4.pt-5.pb-4.sm:p-6.sm:pb-4
           .sm:flex.sm:items-start
             .mx-auto.flex-shrink-0.flex.items-center.justify-center.h-12.w-12.rounded-full.bg-green-100.sm:mx-0.sm:h-10.sm:w-10
@@ -17,26 +17,31 @@
                   .sm:col-span-6
                     = f.label :name, class: "block text-sm font-medium text-gray-700"
                     .mt-1.relative.rounded-md.shadow-sm
-                      = f.text_field :name, class: "focus:ring-foodi-500 focus:border-foodi-500 block w-full pr-12 sm:text-sm border-gray-300 rounded-md"
+                      = f.text_field :name, class: "input valid pr-12", data: { rules: '["required", "maxLength:40"]', server_errors: "#{@household.errors.messages_for(:name)}" }, "x-bind": "change", "x-bind:class": "{'invalid':household_name.errorMessage}"
                       .absolute.inset-y-0.right-0.pr-3.flex.items-center.pointer-events-none
                         span.text-gray-500.sm:text-sm Household
+                    p.mt-2.text-sm.text-red-600 x-show="household_name.errorMessage" x-text="household_name.errorMessage"
                   .sm:col-span-6
                     = f.label :street_address, class: "block text-sm font-medium text-gray-700"
                     .mt-1
-                      = f.text_field :street_address, class: "shadow-sm focus:ring-foodi-500 focus:border-foodi-500 block w-full sm:text-sm border-gray-300 rounded-md", autocomplete: "street-address"
+                      = f.text_field :street_address, class: "input valid", autocomplete: "street-address", data: { rules: '["required"]', server_errors: "#{@household.errors.messages_for(:street_address)}" }, "x-bind": "change", "x-bind:class": "{'invalid':household_street_address.errorMessage}"
+                    p.mt-2.text-sm.text-red-600 x-show="household_street_address.errorMessage" x-text="household_street_address.errorMessage"
                   .sm:col-span-2
                     = f.label :city, class: "block text-sm font-medium text-gray-700"
                     .mt-1
-                      = f.text_field :city, class: "shadow-sm focus:ring-foodi-500 focus:border-foodi-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                      = f.text_field :city, class: "input valid", data: { rules: '["required"]', server_errors: "#{@household.errors.messages_for(:city)}" }, "x-bind": "change", "x-bind:class": "{'invalid':household_city.errorMessage}"
+                    p.mt-2.text-sm.text-red-600 x-show="household_city.errorMessage" x-text="household_city.errorMessage"
                   .sm:col-span-2
                     = f.label :state, class: "block text-sm font-medium text-gray-700"
                     .mt-1
-                      = f.text_field :state, class: "shadow-sm focus:ring-foodi-500 focus:border-foodi-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                      = f.text_field :state, class: "input valid", data: { rules: '["required"]', server_errors: "#{@household.errors.messages_for(:state)}" }, "x-bind": "change", "x-bind:class": "{'invalid':household_state.errorMessage}"
+                    p.mt-2.text-sm.text-red-600 x-show="household_state.errorMessage" x-text="household_state.errorMessage"
                   .sm:col-span-6
                     = f.label :subdomain, class: "block text-sm font-medium text-gray-700"
                     .mt-1.relative.rounded-md.shadow-sm
-                      = f.text_field :subdomain, class: "focus:ring-foodi-500 focus:border-foodi-500 block w-full pr-12 sm:text-sm border-gray-300 rounded-md"
+                      = f.text_field :subdomain, class: "input valid", data: { rules: '["required"]', server_errors: "#{@household.errors.messages_for(:subdomain)}" }, "x-bind": "change", "x-bind:class": "{'invalid':household_subdomain.errorMessage}"
                       .absolute.inset-y-0.right-0.pr-3.flex.items-center.pointer-events-none
                         span.text-gray-500.sm:text-sm .foodi.dev
+                    p.mt-2.text-sm.text-red-600 x-show="household_subdomain.errorMessage" x-text="household_subdomain.errorMessage"
         .bg-gray-50.px-4.py-3.sm:px-6.sm:flex.sm:flex-row-reverse
           = f.submit class: "w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"

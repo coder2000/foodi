@@ -2,3 +2,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.input {
+  @apply block w-full border-gray-300 rounded-md shadow-sm sm:text-sm;
+}
+
+.input.valid {
+  @apply focus:ring-foodi-500 focus:border-foodi-500;
+}
+
+.input.invalid {
+  @apply text-red-900 placeholder-red-900 border-red-300 focus:ring-red-500 focus:border-red-500;
+}
