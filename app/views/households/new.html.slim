@@ -39,7 +39,7 @@
                   .sm:col-span-6
                     = f.label :subdomain, class: "block text-sm font-medium text-gray-700"
                     .mt-1.relative.rounded-md.shadow-sm
-                      = f.text_field :subdomain, class: "input valid", data: { rules: '["required"]', server_errors: "#{@household.errors.messages_for(:subdomain)}" }, "x-bind": "change", "x-bind:class": "{'invalid':household_subdomain.errorMessage}"
+                      = f.text_field :subdomain, class: "input valid", data: { rules: '["required", "minLength:2", "maxLength:40", "regexMatch:^[a-z0-9\\\\-]+$"]', server_errors: "#{@household.errors.messages_for(:subdomain)}" }, "x-bind": "change", "x-bind:class": "{'invalid':household_subdomain.errorMessage}"
                       .absolute.inset-y-0.right-0.pr-3.flex.items-center.pointer-events-none
                         span.text-gray-500.sm:text-sm .foodi.dev
                     p.mt-2.text-sm.text-red-600 x-show="household_subdomain.errorMessage" x-text="household_subdomain.errorMessage"
